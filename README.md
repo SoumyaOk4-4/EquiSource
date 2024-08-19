@@ -1,4 +1,4 @@
-Devs: 
-Soumya Chakraborty
-Ayan Purkait
-Rohan Mandal
+# Devs: 
+- ### Soumya Chakraborty
+- ### Ayan Purkait
+- ### Rohan Mandal
