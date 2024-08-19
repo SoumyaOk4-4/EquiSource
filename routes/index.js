@@ -14,13 +14,13 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/rent', async (req, res) => {
-  const { name, phoneNumber, itemName } = req.body;
+  const { name, phoneNumber, productName } = req.body;
 
   try {
     const newRequest = new UserRequest({
       name,
       phoneNumber,
-      itemName
+      productName
     });
 
     await newRequest.save();
