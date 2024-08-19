@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customers</title>
+</head>
+<body>
+  <h2>Customers</h2>
+  
+  <a href="/admin/logout">Logout</a>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Customers</th>
+        <th>Phone Number</th>
+        <th>Product</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% requests.forEach(request => { %>
+        <tr>
+          <td><%= request.name %></td>
+          <td><%= request.phoneNumber %></td>
+          <td><%= request.productName %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <a href="/admin/upload">Back to Upload</a>
+</body>
+</html>

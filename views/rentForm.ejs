@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent Item</title>
+</head>
+<body>
+  <h1>Rent <%= item.name %></h1>
+  <img src="<%= item.image %>" alt="<%= item.name %>" style="width: 200px; height: 200px;">
+  <form action="/rent" method="POST">
+    <input type="hidden" name="product_name" value="<%= productName %>">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back to Home</a>
+</body>
+</html>
