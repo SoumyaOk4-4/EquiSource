@@ -6,14 +6,13 @@
   <title>Admin Login</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-   * {
+   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
     font-size: 18px;
-
-}
+  }
 .container{
     display: flex;
     justify-content: center;
@@ -23,7 +22,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
+ } 
 .input-container{
     position: relative;
 }
@@ -34,18 +33,18 @@
     transform: translateY(-50%);
     color: #aaa; 
     pointer-events: none;
-}
+ }
 h2{
     color: rgb(226, 216, 216);
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
-}
+ }
 .form{
     padding: 20px;
     max-width: 400px;
     width: 100%;
-}
+ }
 label{
     display: block;
     justify-content: space-between;
@@ -55,7 +54,7 @@ label{
 .name, .pass, .button{
     margin-bottom: 15px;
     background: none;
-}
+ }
 input[type="text"], input[type="password"]{
     border: 3px solid black;
     border-radius: 18px;
@@ -65,7 +64,7 @@ input[type="text"], input[type="password"]{
     outline: none;
     color:rgb(203, 193, 193);
     background-color: rgb(46, 41, 41);
-}
+ }
 button[type="submit"]{
     width: 40%;
     padding: 13px;
@@ -75,24 +74,24 @@ button[type="submit"]{
     background-color: rgb(46, 41, 41);
     cursor: pointer;
     font-size: 16px;
-}
+ }
 input:hover{
     border-color: rgb(21, 81, 232);
-}
+ }
 button[type="submit"]:hover{
     border-color: rgb(21, 81, 232);
-}
+ }
 input[type="text"]:-webkit-autofill, input[type="password"]:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px rgb(46, 41, 41) inset !important;
     -webkit-text-fill-color: rgb(203, 193, 193) !important;
-}
+ }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="form">
       <h2>Admin Login</h2>
-      <form action="/admin/login" method="POST">
+      <form action="/admin/login" method="POST" autocomplete="off">
 
         <div class="name">
           <label for="username">Username:</label>
@@ -113,7 +112,6 @@ input[type="text"]:-webkit-autofill, input[type="password"]:-webkit-autofill {
         <div class="button">
           <button type="submit">Login</button>
         </div>
-
       </form>
     </div>
     </div>

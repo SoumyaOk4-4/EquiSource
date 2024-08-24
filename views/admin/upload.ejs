@@ -5,39 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Upload Product</title>
   <style>
-    * {
+    *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
     font-size: 18px;
-
-}
+  }
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /*background-image: url('/images/back2.png');*/
+    background-image: url('/images/back2.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
+  }
 h2{
     color: rgb(226, 216, 216);
     font-size: 2em;
     margin-bottom: 20px;
     text-align: center;
-}
-.form >a{
+ }
+a{
+  font-weight: bold;
   margin-left: 80%;
   text-decoration: none;
-  color: rgb(7, 44, 147);
+  color: rgb(7, 48, 162);
 }
 .return >a{
-  margin-left: 55%;
-  text-decoration: none;
-  color: rgb(7, 44, 147);
+  margin-left: 54%;
 }
 .form{
     padding: 20px;
@@ -52,10 +50,17 @@ label{
   display: block;
   justify-content: space-between;
   font-size: 16px;
-  color: rgb(18, 93, 224);
+  color: rgb(24, 160, 92);
 }
-input[type="text"], input[type="number"]{
-   border: 3px solid black;
+
+.stock{
+  display: flex;
+}
+input[type="checkbox"]{
+  margin-left: 1%;
+}
+input[type="text"], input[type="number"], button[type="submit"]{
+  border: 3px solid black;
    border-radius: 18px; 
    width: 100%;
    padding: 10px;
@@ -64,8 +69,19 @@ input[type="text"], input[type="number"]{
    color: rgb(226, 216, 216);
    background-color: rgb(46, 41, 41);
 }
-
-
+input[type="file"]{
+  color: rgb(226, 216, 216);
+}
+button[type="submit"]{
+  padding: 9px;
+  width: 40%;
+}
+input:hover, button:hover{
+  border-color: rgb(103, 162, 15);
+}
+button:hover{
+  cursor: pointer;
+}
   </style>
 </head>
 
@@ -74,7 +90,7 @@ input[type="text"], input[type="number"]{
     <div class="form">
       <h2>Upload Product</h2>
       <a href="/admin/logout">Logout</a>
-     <form action="/admin/upload" method="POST" enctype="multipart/form-data">
+     <form action="/admin/upload" method="POST" enctype="multipart/form-data" autocomplete="off">
 
        <div class="product">
          <label for="name">Product Name:</label>
@@ -93,7 +109,7 @@ input[type="text"], input[type="number"]{
        
         <div class="img">
          <label for="image">Product Image:</label>
-         <input type="file" id="image" name="image" accept="image" required>
+         <input type="file" id="image" name="image" accept="image" required class="img-button">
         </div>
        
         <div class="button">
