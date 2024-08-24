@@ -22,8 +22,8 @@
         background-image: url(/images/back4.png);
         background-position: center;
         background-repeat: no-repeat;
-        background-position: center;
         background-size: cover;
+        flex-direction: row;
       }
       .sidebar {
         width: 25%;
@@ -32,9 +32,9 @@
         justify-content: space-between;
         padding: 15px;
         height: 92vh;
-        border: apx solid #eee;
         box-shadow: 0px 0px 3px gray;
         border-radius: 6px;
+        background-color: white;
       }
       .searchbar {
         width: 100%;
@@ -104,6 +104,7 @@
         color: #e0dede;
         font-size: 40px;
         font-weight: bold;
+        text-align: center;
       }
       .root {
         width: 100%;
@@ -164,6 +165,51 @@
       ::-webkit-scrollbar {
         display: none;
       }
+
+      /* Media Queries for responsiveness */
+      @media (max-width: 1024px) {
+        .container {
+          flex-direction: column;
+        }
+        .sidebar,
+        .data {
+          width: 100%;
+          height: auto;
+        }
+        .root {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          margin: 2vh;
+        }
+        .header p {
+          font-size: 30px;
+        }
+        .root {
+          grid-template-columns: 1fr;
+        }
+        .img-box {
+          height: 120px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          margin: 1vh;
+        }
+        .header p {
+          font-size: 24px;
+        }
+        .sidebar {
+          padding: 10px;
+        }
+        .img-box {
+          height: 100px;
+        }
+      }
     </style>
     <script
       src="https://kit.fontawesome.com/92d70a2fd8.js"
@@ -183,7 +229,7 @@
         </div>
         <hr style="margin: 15px 0; border: 1px solid#c4c3c3" />
 
-        <div class="sidebody" style="height: 69vh">
+        <div class="sidebody" style="height: 10vh">
           <div class="searchbar">
             <input
               type="text"
@@ -194,20 +240,6 @@
             <i class="fa-solid fa-magnifying-glass glass"></i>
           </div>
         </div>
-        <hr style="margin: 15px 0; border: 1px solid #c4c3c3" />
-
-        <div class="sidefoot">
-          <div class="social-icons">
-            <p>Made With ❤️ By:</p>
-            <a href="https://github.com/JustChillinBro92"
-              target="_blank"><i class="fa-brands fa-square-github"></i
-            ></a>
-            <a href="https://github.com/SoumyaOk4-4"
-              target="_blank"><i class="fa-brands fa-square-github"></i
-            ></a>
-          </div>
-        </div>
-      </div>
 
       <div class="data">
         <div class="top">
@@ -228,7 +260,6 @@
                   class="img"
                   src="/uploads/<%= item.image %>"
                   alt="<%= item.name %>"
-                  style="width: 200px; height: auto"
                 />
               </div>
               <div class="bottom">
@@ -242,6 +273,20 @@
             </div>
             <% }) %>
           </div>
+          <hr style="margin: 15px 0; border: 1px solid #c4c3c3" />
+
+        <div class="sidefoot">
+          <div class="social-icons">
+            <p>Made With ❤️ By:</p>
+            <a href="https://github.com/JustChillinBro92" target="_blank"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+            <a href="https://github.com/SoumyaOk4-4" target="_blank"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
