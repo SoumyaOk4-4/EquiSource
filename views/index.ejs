@@ -14,23 +14,19 @@
       }
 
       body {
-        margin: 4vh;
+        margin: 0;
         background-image: url(/images/back6.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
       }
 
-      .container {
-        min-height: 100vh;
-      }
-
-      .container,
-      .inner-container {
+      .container{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        min-height: 100vh;
       }
 
       .sidebar {
@@ -39,7 +35,6 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 15px;
-        height: 40vh;
         border-radius: 6px;
       }
 
@@ -64,7 +59,15 @@
         margin-bottom: 10px;
       }
 
-      .header p {
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .navbar p {
         color: #e0dede;
         font-size: 2em;
         font-size: 40px;
@@ -75,12 +78,40 @@
         padding: 8px;
       }
 
-      .header i {
-        color: #3F80FF;
-        font-size: 1.6em;
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
         margin-right: 20px;
+      }
+
+      .navbar ul li {
+        margin-left: 20px;
+        margin-top: 18px;;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .navbar ul li a {
+        color: #3f80ff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+
+      .navbar ul li a:hover {
+        color: orangered;
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 1.6em;
+        color: #3f80ff;
         cursor: pointer;
-        margin-top: 8px;
+      }
+
+      .sidebody{
+        width: 80%;
+        padding: 20px;
       }
 
       .searchbar-container {
@@ -106,8 +137,19 @@
       }
 
       .dots-container {
-        margin-right: 70%;
-        margin-top: 20px;
+        display: flex;
+        margin-right: 73%;
+      }
+
+      .dots{
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .dots i{
+        margin-right: 5px;
       }
 
       input {
@@ -138,8 +180,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        margin-top: 20px;
-        border-radius: 8px;
+        margin-top: auto;
       }
 
       .follow h1,
@@ -147,13 +188,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
+        font-weight: 800;
         color: #084081;
         font-size: 28px;
       }
 
+     .follow p{
+       font-weight: bold;
+     }
+
       .us {
         color: white;
+        margin-bottom: 5px;
       }
 
       .social-icons {
@@ -183,6 +229,7 @@
 
       .top {
         height: 60px;
+        width: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -262,7 +309,8 @@
 
       button {
         width: 100%;
-        background-color: #333;
+        background-color: #333333a8;
+        backdrop-filter: blur(10px);
         color: #eee;
         font-weight: bold;
         border-radius: 5px;
@@ -282,13 +330,13 @@
 
       /* Media Queries for responsiveness */
       @media (max-width: 1024px) {
-        .inner-container {
-          flex-direction: column;
+        .dots-container {
+          margin-right: 69%;
         }
 
         .sidebar,
         .data {
-          width: 100%;
+          width: 90%;
           height: auto;
         }
 
@@ -301,13 +349,39 @@
 
       @media (max-width: 768px) {
         body {
-          margin: 2vh;
+          margin: 0;
         }
 
         .dots-container {
-          margin-right: 70%;
+          margin-right: 67%;
         }
 
+        .navbar ul {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+          position: absolute;
+          right: 20px;
+        }
+
+        .hamburger.active + ul {
+          display: flex;
+          flex-direction: column;
+          background-color: rgba(0, 0, 0, 0.8);
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 200px;
+          border-radius: 0 0 10px 10px;
+        }
+
+        .navbar ul li {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+        
         .searchbar {
           width: 90%;
         }
@@ -321,6 +395,9 @@
           margin-bottom: 20px;
         }
 
+        .box{
+          padding: 40px;
+        }
         .img-box {
           height: 120px;
         }
@@ -328,15 +405,15 @@
 
       @media (max-width: 480px) {
         body {
-          margin: 1vh;
+          margin: 0;
         }
 
         .dots-container {
-          margin-right: 70%;
+          margin-right: 97%;
         }
 
         .searchbar {
-          width: 90%;
+          width: 120%;
         }
 
         .header p {
@@ -345,6 +422,7 @@
 
         .sidebar {
           padding: 10px;
+          width: 100%;
         }
 
         .img-box {
@@ -357,7 +435,6 @@
 
         button {
           padding: 5px 15px;
-          s
         }
       }
     </style>
@@ -369,65 +446,69 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="inner-container">
+    <div class="container">    
         <div class="sidebar">
           <div class="sidehead">
             <div class="header">
-              <p>EquiSource</p>
-              <i class="fa-solid fa-bars"></i>
-            </div>
-          </div>
-
-          <div class="sidebody">
-            <div class="searchbar-container">
-              <div class="dots-container">
-                <div class="dots" style="margin-bottom: 10px">
-                  <i class="fa-solid fa-circle" style="color: orangered"></i>
-                  <i class="fa-solid fa-circle" style="color: #333"></i>
-                  <i
-                    class="fa-solid fa-circle"
-                    style="color: rgb(253, 111, 60)"
-                  ></i>
-                </div>
-              </div>
-              <div class="searchbar">
-                <input
-                  type="text"
-                  id="search"
-                  placeholder="Search"
-                  name="searchBar"
-                />
-                <i
-                  class="fa-solid fa-magnifying-glass glass"
-                  id="searchBtn"
-                ></i>
-              </div>
+              <nav class="navbar">
+                <p>EquiSource</p>
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Guidelines</a></li>
+                  <li><a href="#">Policy</a></li>
+                </ul>
+                <span class="hamburger">&#9776;</span>
+              </nav>
             </div>
           </div>
         </div>
 
-        <div class="data">
-          <div class="top">
-            <p>
-              "Success Ke Peeche Mat Bhaago, Excellence Ka Peecha Karo"
-              <i class="fa-solid fa-graduation-cap"></i>
-            </p>
+        <div class="sidebody">
+          <div class="searchbar-container">
+            <div class="dots-container">
+              <div class="dots">
+                <i class="fa-solid fa-circle" style="color: orangered"></i>
+                <i class="fa-solid fa-circle" style="color: #333"></i>
+                <i class="fa-solid fa-circle" style="color: rgb(253, 111, 60)"></i>
+              </div>
+            </div>
+            <div class="searchbar">
+              <input
+                type="text"
+                id="search"
+                placeholder="Search"
+                name="searchBar"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass glass"
+                id="searchBtn"
+              ></i>
+            </div>
           </div>
+        </div>
 
+        <div class="top">
+          <p>
+            "Success Ke Peeche Mat Bhaago, Excellence Ka Peecha Karo"
+            <i class="fa-solid fa-graduation-cap"></i>
+          </p>
+        </div>
+
+        <div class="data">
           <div class="body">
             <div id="root"></div>
           </div>
         </div>
-      </div>
+      
 
       <div class="footer">
         <div class="follow">
           <h1>FOLLOW</h1>
           <span class="us">US</span>
+          <p>EquiSource © 2024 | All Rights Reserved</p>
         </div>
         <div class="social-icons">
-          <p>Made With ❤️ By:</p>
+          <p>Made With ❤ By:</p>
           <a href="https://github.com/SoumyaOk4-4" target="_blank"
             ><i class="fa-brands fa-square-github"></i
           ></a>
@@ -438,69 +519,72 @@
       </div>
     </div>
     <script>
-          // Ensure script runs after DOM is fully loaded
-          document.addEventListener('DOMContentLoaded', () => {
-            const itemsArray = [
-                <% items.forEach(item => { %>
+      document.addEventListener('DOMContentLoaded', () => {
+        const itemsArray = [
+          <% items.forEach(item => { %>
             {
               name: "<%= item.name %>",
               price: <%= item.price %>,
               image: "/uploads/<%= item.image %>",
               available: <%= item.available %>
-                  },
-                <% }) %>
-              ];
-
-            const categories = [...new Set(itemsArray.map((item) => { return item }))]
-
-            let debounceTimer;
-            const performSearch = () => {
-              clearTimeout(debounceTimer);
-              debounceTimer = setTimeout(() => {
-                const searchQuery = document.getElementById('search').value.toLowerCase();
-                if (!searchQuery) {
-                  displayItem(categories);
-                  return;
-                }
-                const filteredItems = categories.filter(item => {
-                  return (item.name.toLowerCase().startsWith(searchQuery));
-                });
-                displayItem(filteredItems);
-              }, 300);
-            };
-
-            document.getElementById('searchBtn').addEventListener('click', performSearch);
-
-            document.getElementById('search').addEventListener('keyup', (e) => {
-              if (e.key === 'Enter') {
-                performSearch();
-              }
+            },
+          <% }) %>
+        ];
+    
+        const categories = [...new Set(itemsArray.map((item) => item))];
+    
+        let debounceTimer;
+        const performSearch = () => {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            const searchQuery = document.getElementById('search').value.toLowerCase();
+            if (!searchQuery) {
+              displayItem(categories);
+              return;
+            }
+            const filteredItems = categories.filter(item => {
+              return (item.name.toLowerCase().startsWith(searchQuery));
             });
-
-            const displayItem = (items) => {
-              const rootElement = document.getElementById('root');
-              if (!rootElement) {
-                console.error('Element with ID "root" not found.');
-                return;
-              }
-              rootElement.innerHTML = items.map(item => {
-                return (
-                  `<div class="box">
-                      <div class="img-box">
-                        <img class="img" src="${item.image}" alt="${item.name}" />
-                      </div>
-                      <div class="bottom">
-                        <h2>Product: ${item.name}</h2>
-                        <h3>Price: ₹${item.price}</h3>
-                        <h2>Status: ${item.available ? 'Available' : 'Not Available'}</h2>
-                         ${item.available ? `<button onclick="rentItem('${item.name}')">Rent Now</button>`: `<button disabled>Out of stock</button>`}
-                      </div>
-                    </div>`
-                )
-              }).join('');
-            };
-            displayItem(categories);
-          });
+            displayItem(filteredItems);
+          }, 300);
+        };
+    
+        document.getElementById('searchBtn').addEventListener('click', performSearch);
+    
+        document.getElementById('search').addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+    
+        const displayItem = (items) => {
+          const rootElement = document.getElementById('root');
+          if (!rootElement) {
+            console.error('Element with ID "root" not found.');
+            return;
+          }
+          rootElement.innerHTML = items.map(item => {
+            return (
+              `<div class="box">
+                <div class="img-box">
+                  <img class="img" src="${item.image}" alt="${item.name}" />
+                </div>
+                <div class="bottom">
+                  <h2>Product: ${item.name}</h2>
+                  <h3>Price: ₹${item.price}</h3>
+                  <h2>Status: ${item.available ? 'Available' : 'Not Available'}</h2>
+                  ${item.available 
+                    ? `<button onclick="rentItem('${item.name}')">Rent Now</button>` 
+                    : `<button disabled>Out of stock</button>`}
+                </div>
+              </div>`
+            );
+          }).join('');
+        };
+    
+        displayItem(categories);
+      });
     </script>
+    
   </body>
 </html>
