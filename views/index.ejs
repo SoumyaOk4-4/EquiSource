@@ -1,668 +1,672 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EquiSource: Best place to rent</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-      font-size: 18px;
-    }
-
-    body {
-      margin: 0;
-      background-image: url(/images/back6.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 15px;
-      border-radius: 6px;
-    }
-
-    .sidehead {
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      border: 1px solid;
-      border-radius: 60px;
-      border-color: rgba(0, 0, 0, 0.12);
-      box-shadow: 0 0 1px rgba(2, 31, 59, 0.7),
-        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
-        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
-      padding: 8px;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-radius: 8px;
-      height: 80px;
-      margin-bottom: 10px;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: left;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .navbar p {
-      color: #e0dede;
-      font-size: 2em;
-      font-size: 40px;
-      font-weight: bold;
-      text-align: center;
-      margin-left: 30px;
-      margin-top: 5px;
-      padding: 8px;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      margin-right: 20px;
-    }
-
-    .navbar ul li {
-      margin-left: 20px;
-      margin-top: 18px;
-      ;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .navbar ul li a {
-      color: #3f80ff;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
-
-    .navbar ul li a:hover {
-      color: orangered;
-    }
-
-    .side-menu{
-      display: none;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 1.6em;
-      color: #3f80ff;
-      cursor: pointer;
-    }
-
-    .sidebody {
-      width: 80%;
-      padding: 20px;
-    }
-
-    .searchbar-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .searchbar {
-      width: 80%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 9px;
-      background-color: rgb(46, 41, 41);
-      border: 3px solid rgb(17, 15, 15);
-      border-radius: 20px;
-    }
-
-    .searchbar:hover {
-      border-color: blue;
-    }
-
-    .dots-container {
-      display: flex;
-      margin-right: 73%;
-    }
-
-    .dots {
-      display: flex;
-      align-items: left;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .dots i {
-      margin-right: 5px;
-    }
-
-    input {
-      color: rgb(227, 224, 224);
-      width: 100%;
-      margin-left: 10px;
-      background: none;
-      outline: none;
-      border: none;
-      font-size: 16px;
-    }
-
-    .glass {
-      margin-right: 20px;
-      color: #aaa;
-    }
-
-    .glass:hover {
-      color: orangered;
-      cursor: pointer;
-    }
-
-    .footer {
-      width: 100%;
-      padding: 10px;
-      background-image: linear-gradient(to right, #3F80FF, #5CE1E6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-    }
-
-    .follow h1,
-    .us {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: #084081;
-      font-size: 28px;
-    }
-
-    .follow p {
-      font-weight: bold;
-    }
-
-    .us {
-      color: white;
-      margin-bottom: 5px;
-    }
-
-    .social-icons {
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .fa-brands {
-      font-size: 30px;
-      margin: 0 10px;
-      color: #333;
-      cursor: pointer;
-    }
-
-    .fa-brands:hover {
-      color: orangered;
-    }
-
-    .data {
-      width: 90%;
-      border-radius: 3px;
-      height: 92vh;
-      overflow-y: auto;
-    }
-
-    .top {
-      height: 60px;
-      width: 90%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: bold;
-      background-image: linear-gradient(to right, #3F80FF, #5CE1E6);
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-    }
-
-    .box {
-      margin: 1px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px;
-      border: 1px solid #3F80FF;
-      border-radius: 5px;
-      background-color: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(3px);
-      border-color: rgba(0, 0, 0, 0.12);
-      box-shadow: 0 0 1px rgba(2, 31, 59, 0.7),
-        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
-        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
-    }
-
-    .box:hover {
-      cursor: pointer;
-      border-color: #3F80FF;
-    }
-
-    #root {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px;
-    }
-
-    .img-box {
-      width: 100%;
-      height: 176px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .img {
-      max-height: 90%;
-      max-width: 90%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .bottom {
-      color: white;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      text-align: center;
-      height: 110px;
-    }
-
-    h2 {
-      font-size: 18px;
-    }
-
-    h3 {
-      font-size: 18px;
-      font-weight: bold;
-      color: orangered;
-    }
-
-    button {
-      width: 100%;
-      background-color: #333333a8;
-      backdrop-filter: blur(10px);
-      color: #eee;
-      font-weight: bold;
-      border-radius: 5px;
-      position: relative;
-      border: none;
-      padding: 7px 25px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: rgb(25, 119, 187);
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Media Queries for responsiveness */
-    @media (max-width: 1024px) {
-      .dots-container {
-        margin-right: 69%;
-      }
-      
-      .sidebar,
-      .data {
-        width: 90%;
-        height: auto;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EquiSource: Best place to rent</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
       }
 
-      #root {
-        grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 20px;
-
-      }
-    }
-
-    @media (max-width: 768px) {
       body {
         margin: 0;
+        background-image: url(/images/back6.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
-      .dots-container {
-        margin-right: 67%;
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        border-radius: 6px;
+      }
+
+      .sidehead {
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        border: 1px solid;
+        border-radius: 60px;
+        border-color: rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0 1px rgba(2, 31, 59, 0.7),
+          1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+          4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+        padding: 8px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 8px;
+        height: 80px;
+        margin-bottom: 10px;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .navbar p {
+        color: #e0dede;
+        font-size: 2em;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 30px;
+        margin-top: 5px;
+        padding: 8px;
       }
 
       .navbar ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
+
+      .navbar ul li {
+        margin-left: 20px;
+        margin-top: 18px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .navbar ul li a {
+        color: #3f80ff;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+
+      .navbar ul li a:hover {
+        color: orangered;
+      }
+
+      .side-menu {
         display: none;
       }
 
       .hamburger {
-        display: block;
-        position: absolute;
-        right: 34px;
+        display: none;
+        font-size: 1.6em;
+        color: #3f80ff;
+        cursor: pointer;
       }
 
-      .hamburger.active+ul {
+      .sidebody {
+        width: 80%;
+        padding: 20px;
+      }
+
+      .searchbar-container {
         display: flex;
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.8);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        border-radius: 0 0 10px 10px;
+        align-items: center;
+        justify-content: center;
       }
-
-      .navbar ul li {
-        margin-left: 0;
-        margin-top: 10px;
-      }
-
-      .side-menu {
-      position: fixed;
-      top: 0;
-      right: -250px;
-      width: 250px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      transition: right 0.3s ease-in-out;
-      z-index: 1000;
-    }
-
-    .side-menu.active {
-      right: 0;
-    }
-
-    .side-menu ul {
-      list-style: none;
-      padding: 0;
-      width: 100%;
-    }
-
-    .side-menu ul li {
-      margin-bottom: 15px;
-    }
-
-    .side-menu ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2em;
-      width: 100%;
-      display: block;
-      padding: 10px;
-      background-color: transparent;
-      border: none;
-      text-align: left;
-    }
-
-    .side-menu ul li a:hover {
-      background-color: #3f80ff;
-      border-radius: 5px;
-    }
-
-    .close-btn {
-      align-self: flex-end;
-      font-size: 1.5em;
-      color: #fff;
-      cursor: pointer;
-      margin-bottom: 20px;
-    }
 
       .searchbar {
-        width: 90%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 9px;
+        background-color: rgb(46, 41, 41);
+        border: 3px solid rgb(17, 15, 15);
+        border-radius: 20px;
       }
 
-      .header p {
+      .searchbar:hover {
+        border-color: blue;
+      }
+
+      .dots-container {
+        display: flex;
+        margin-right: 73%;
+      }
+
+      .dots {
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .dots i {
+        margin-right: 5px;
+      }
+
+      input {
+        color: rgb(227, 224, 224);
+        width: 100%;
+        margin-left: 10px;
+        background: none;
+        outline: none;
+        border: none;
+        font-size: 16px;
+      }
+
+      .glass {
+        margin-right: 20px;
+        color: #aaa;
+      }
+
+      .glass:hover {
+        color: orangered;
+        cursor: pointer;
+      }
+
+      .footer {
+        width: 100%;
+        padding: 10px;
+        background-image: linear-gradient(to right, #3f80ff, #5ce1e6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+      }
+
+      .follow h1,
+      .us {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: #084081;
+        font-size: 28px;
+      }
+
+      .follow p {
+        font-weight: bold;
+      }
+
+      .us {
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      .social-icons {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .fa-brands {
         font-size: 30px;
+        margin: 0 10px;
+        color: #333;
+        cursor: pointer;
       }
 
-      #root {
-        grid-template-columns: 1fr;
+      .fa-brands:hover {
+        color: orangered;
+      }
+
+      .data {
+        width: 90%;
+        border-radius: 3px;
+        height: 92vh;
+        overflow-y: auto;
+      }
+
+      .top {
+        height: 60px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #3f80ff, #5ce1e6);
+        border-radius: 8px;
+        padding: 15px;
         margin-bottom: 20px;
       }
 
       .box {
-        padding: 40px;
+        margin: 1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        border: 1px solid #3f80ff;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(3px);
+        border-color: rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0 1px rgba(2, 31, 59, 0.7),
+          1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+          4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
       }
 
-      .img-box {
-        height: 120px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        margin: 0;
+      .box:hover {
+        cursor: pointer;
+        border-color: #3f80ff;
       }
 
-      .dots-container {
-        margin-right: 97%;
-      }
-
-      .searchbar {
-        width: 120%;
-      }
-
-      .header p {
-        font-size: 30px;
-      }
-
-      .sidebar {
-        padding: 10px;
+      #root {
         width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
       }
 
       .img-box {
-        height: 100px;
+        width: 100%;
+        height: 176px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .img {
+        max-height: 90%;
+        max-width: 90%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .bottom {
+        color: white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        text-align: center;
+        height: 110px;
+      }
+
+      h2 {
+        font-size: 18px;
       }
 
       h3 {
         font-size: 18px;
+        font-weight: bold;
+        color: orangered;
       }
 
       button {
-        padding: 5px 15px;
+        width: 100%;
+        background-color: #333333a8;
+        backdrop-filter: blur(10px);
+        color: #eee;
+        font-weight: bold;
+        border-radius: 5px;
+        position: relative;
+        border: none;
+        padding: 7px 25px;
+        cursor: pointer;
       }
-    }
-  </style>
-  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
-  <script src="/main.js"></script>
-</head>
 
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="sidehead">
-        <div class="header">
-          <nav class="navbar">
-            <p>EquiSource</p>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Guidelines</a></li>
-              <li><a href="/policy.ejs">Policy</a></li>
-            </ul>
-            <span class="hamburger">&#9776;</span>
-          </nav>
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="side-menu" id="sideMenu">
-      <span class="close-btn" id="closeBtn">&times;</span>
-      <ul>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/guidelines">Guidelines</a></li>
-        <li><a href="/policy">Policy</a></li>
-      </ul>
-    </div>
+      button:hover {
+        background-color: rgb(25, 119, 187);
+      }
 
-    <div class="sidebody">
-      <div class="searchbar-container">
-        <div class="dots-container">
-          <div class="dots">
-            <i class="fa-solid fa-circle" style="color: orangered"></i>
-            <i class="fa-solid fa-circle" style="color: #333"></i>
-            <i class="fa-solid fa-circle" style="color: rgb(253, 111, 60)"></i>
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Media Queries for responsiveness */
+      @media (max-width: 1024px) {
+        .dots-container {
+          margin-right: 69%;
+        }
+
+        .sidebar,
+        .data {
+          width: 90%;
+          height: auto;
+        }
+
+        #root {
+          grid-template-columns: repeat(2, 1fr);
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          margin: 0;
+        }
+
+        .dots-container {
+          margin-right: 67%;
+        }
+
+        .navbar ul {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+          position: absolute;
+          right: 34px;
+        }
+
+        .hamburger.active + ul {
+          display: flex;
+          flex-direction: column;
+          background-color: rgba(0, 0, 0, 0.8);
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 200px;
+          border-radius: 0 0 10px 10px;
+        }
+
+        .navbar ul li {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+
+        .side-menu {
+          position: fixed;
+          top: 0;
+          right: -250px;
+          width: 250px;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.9);
+          box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          transition: right 0.3s ease-in-out;
+          z-index: 1000;
+        }
+
+        .side-menu.active {
+          right: 0;
+        }
+
+        .side-menu ul {
+          list-style: none;
+          padding: 0;
+          width: 100%;
+        }
+
+        .side-menu ul li {
+          margin-bottom: 15px;
+        }
+
+        .side-menu ul li a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.2em;
+          width: 100%;
+          display: block;
+          padding: 10px;
+          background-color: transparent;
+          border: none;
+          text-align: left;
+        }
+
+        .side-menu ul li a:hover {
+          background-color: #3f80ff;
+          border-radius: 5px;
+        }
+
+        .close-btn {
+          align-self: flex-end;
+          font-size: 1.5em;
+          color: #fff;
+          cursor: pointer;
+          margin-bottom: 20px;
+        }
+
+        .searchbar {
+          width: 90%;
+        }
+
+        .header p {
+          font-size: 30px;
+        }
+
+        #root {
+          grid-template-columns: 1fr;
+          margin-bottom: 20px;
+        }
+
+        .box {
+          padding: 40px;
+        }
+
+        .img-box {
+          height: 120px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          margin: 0;
+        }
+
+        .dots-container {
+          margin-right: 97%;
+        }
+
+        .searchbar {
+          width: 120%;
+        }
+
+        .header p {
+          font-size: 30px;
+        }
+
+        .sidebar {
+          padding: 10px;
+          width: 100%;
+        }
+
+        .img-box {
+          height: 100px;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+
+        button {
+          padding: 5px 15px;
+        }
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/92d70a2fd8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/main.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidehead">
+          <div class="header">
+            <nav class="navbar">
+              <p>EquiSource</p>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Guidelines</a></li>
+                <li><a href="/policy.ejs">Policy</a></li>
+              </ul>
+              <span class="hamburger">&#9776;</span>
+            </nav>
           </div>
         </div>
-        <div class="searchbar">
-          <input type="text" id="search" placeholder="Search" name="searchBar" />
-          <i class="fa-solid fa-magnifying-glass glass" id="searchBtn"></i>
+      </div>
+
+      <div class="side-menu" id="sideMenu">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/guidelines">Guidelines</a></li>
+          <li><a href="/policy">Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebody">
+        <div class="searchbar-container">
+          <div class="dots-container">
+            <div class="dots">
+              <i class="fa-solid fa-circle" style="color: orangered"></i>
+              <i class="fa-solid fa-circle" style="color: #333"></i>
+              <i
+                class="fa-solid fa-circle"
+                style="color: rgb(253, 111, 60)"
+              ></i>
+            </div>
+          </div>
+          <div class="searchbar">
+            <input
+              type="text"
+              id="search"
+              placeholder="Search"
+              name="searchBar"
+            />
+            <i class="fa-solid fa-magnifying-glass glass" id="searchBtn"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="top">
+        <p>
+          "Success Ke Peeche Mat Bhaago, Excellence Ka Peecha Karo"
+          <i class="fa-solid fa-graduation-cap"></i>
+        </p>
+      </div>
+
+      <div class="data">
+        <div class="body">
+          <div id="root"></div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="social-icons">
+          <b>Made With ❤ By: </b>
+          <b> Soumya and Ayan</b>
+        </div>
+        <br />
+        <div class="follow">
+          <p>EquiSource © 2024 | All Rights Reserved</p>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
 
-    <div class="top">
-      <p>
-        "Success Ke Peeche Mat Bhaago, Excellence Ka Peecha Karo"
-        <i class="fa-solid fa-graduation-cap"></i>
-      </p>
-    </div>
+        const hamburger = document.querySelector('.hamburger');
+        const sideMenu = document.getElementById('sideMenu');
+        const closeBtn = document.getElementById('closeBtn');
 
-    <div class="data">
-      <div class="body">
-        <div id="root"></div>
-      </div>
-    </div>
+        hamburger.addEventListener('click', () => {
+          sideMenu.classList.add('active');
+        });
 
-
-    <div class="footer">
-      <div class="follow">
-        <h1>FOLLOW</h1>
-        <span class="us">US</span>
-        <p>EquiSource © 2024 | All Rights Reserved</p>
-      </div>
-      <div class="social-icons">
-        <p>Made With ❤ By:</p>
-        <a href="https://github.com/SoumyaOk4-4" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-        <a href="https://github.com/JustChillinBro92" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-      </div>
-    </div>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-      const hamburger = document.querySelector('.hamburger');
-      const sideMenu = document.getElementById('sideMenu');
-      const closeBtn = document.getElementById('closeBtn');
-
-      hamburger.addEventListener('click', () => {
-        sideMenu.classList.add('active');
-      });
-
-      closeBtn.addEventListener('click', () => {
-        sideMenu.classList.remove('active');
-      });
-
-      // Close menu when clicking outside of it
-      document.addEventListener('click', (event) => {
-        if (!sideMenu.contains(event.target) && !hamburger.contains(event.target)) {
+        closeBtn.addEventListener('click', () => {
           sideMenu.classList.remove('active');
-        }
-      });
+        });
 
-      const itemsArray = [
-          <% items.forEach(item => { %>
-      {
-        name: "<%= item.name %>",
-        price: <%= item.price %>,
-        image: "/uploads/<%= item.image %>",
-        available: <%= item.available %>
-            },
-          <% }) %>
-        ];
+        // Close menu when clicking outside of it
+        document.addEventListener('click', (event) => {
+          if (!sideMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            sideMenu.classList.remove('active');
+          }
+        });
 
-      const categories = [...new Set(itemsArray.map((item) => item))];
+        const itemsArray = [
+            <% items.forEach(item => { %>
+        {
+          name: "<%= item.name %>",
+          price: <%= item.price %>,
+          image: "/uploads/<%= item.image %>",
+          available: <%= item.available %>
+              },
+            <% }) %>
+          ];
 
-      let debounceTimer;
-      const performSearch = () => {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(() => {
-          const searchQuery = document.getElementById('search').value.toLowerCase();
-          if (!searchQuery) {
-            displayItem(categories);
+        const categories = [...new Set(itemsArray.map((item) => item))];
+
+        let debounceTimer;
+        const performSearch = () => {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            const searchQuery = document.getElementById('search').value.toLowerCase();
+            if (!searchQuery) {
+              displayItem(categories);
+              return;
+            }
+            const filteredItems = categories.filter(item => {
+              return (item.name.toLowerCase().startsWith(searchQuery));
+            });
+            displayItem(filteredItems);
+          }, 300);
+        };
+
+        document.getElementById('searchBtn').addEventListener('click', performSearch);
+
+        document.getElementById('search').addEventListener('keyup', (e) => {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+
+        const displayItem = (items) => {
+          const rootElement = document.getElementById('root');
+          if (!rootElement) {
+            console.error('Element with ID "root" not found.');
             return;
           }
-          const filteredItems = categories.filter(item => {
-            return (item.name.toLowerCase().startsWith(searchQuery));
-          });
-          displayItem(filteredItems);
-        }, 300);
-      };
 
-      document.getElementById('searchBtn').addEventListener('click', performSearch);
+          rootElement.innerHTML = items.map(item => {
+            return (
+              `<div class="box">
+                  <div class="img-box">
+                    <img class="img" src="${item.image}" alt="${item.name}" />
+                  </div>
+                  <div class="bottom">
+                    <h2>Product: ${item.name}</h2>
+                    <h3>Price: ₹${item.price}</h3>
+                    <h2>Status: ${item.available ? 'Available' : 'Not Available'}</h2>
+                    ${item.available
+                ? `<button onclick="rentItem('${item.name}')">Rent Now</button>`
+                : `<button disabled>Out of stock</button>`}
+                  </div>
+                </div>`
+            );
+          }).join('');
+        };
 
-      document.getElementById('search').addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-          performSearch();
-        }
+        displayItem(categories);
       });
-
-      const displayItem = (items) => {
-        const rootElement = document.getElementById('root');
-        if (!rootElement) {
-          console.error('Element with ID "root" not found.');
-          return;
-        }
-
-        rootElement.innerHTML = items.map(item => {
-          return (
-            `<div class="box">
-                <div class="img-box">
-                  <img class="img" src="${item.image}" alt="${item.name}" />
-                </div>
-                <div class="bottom">
-                  <h2>Product: ${item.name}</h2>
-                  <h3>Price: ₹${item.price}</h3>
-                  <h2>Status: ${item.available ? 'Available' : 'Not Available'}</h2>
-                  ${item.available
-              ? `<button onclick="rentItem('${item.name}')">Rent Now</button>`
-              : `<button disabled>Out of stock</button>`}
-                </div>
-              </div>`
-          );
-        }).join('');
-      };
-
-      displayItem(categories);
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

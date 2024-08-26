@@ -1,11 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #3F80FF;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .devs {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .dev {
+      text-align: center;
+    }
+
+    .dev img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .dev h3 {
+      margin-top: 10px;
+      font-size: 1.5em;
+      color: #3F80FF;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .social-links a:hover {
+      color: orangered;
+    }
+
+    a {
+      color: #3F80FF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: orangered;
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="container">
+    <h1>About Us</h1>
+    <p>Welcome to EquiSource, the best place to rent your desired college accessories. Our platform is designed to make renting simple and accessible for students. We are two passionate developers who have come together to build this platform from the ground up.</p>
+
+    <div class="devs">
+      <div class="dev">
+        <img src="/images/soumya.jpg" alt="Soumya">
+        <h3>Soumya</h3>
+        <p>Backend Developer</p>
+        <div class="social-links">
+          <a href="https://github.com/SoumyaOk4-4" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+        </div>
+      </div>
+      <div class="dev">
+        <img src="/images/ayan.jpg" alt="Ayan">
+        <h3>Ayan</h3>
+        <p>Frontend Developer</p>
+        <div class="social-links">
+          <a href="https://github.com/JustChillinBro92" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p><a href="/">Back to Home</a></p>
+  </div>
 </body>
 </html>
+

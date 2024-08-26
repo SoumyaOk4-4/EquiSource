@@ -1,105 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customers</title>
-  <style>
-    *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
-    font-size: 18px;
-    }
-    .container{
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      background-image: url(/images/back3.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-  h2{
-    font-size: 1.8em;
-  }
-  .inner-container, .innermost-container{
-    padding: 15px;
-    border: 2px solid black;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-  }
-  .innermost-container{
-    backdrop-filter: blur(10px);
-    border: 1.5px solid black;
-  }
-  a{
-    text-decoration: none;
-    font-weight: bold;
-  }
-  table{
-    padding: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
-  }
-  th{
-    border: 2px solid black;
-    font-size: 16px;
-    padding: 9px;
-    width: 80%;
-    background-color: rgb(212, 245, 254);
-  }
-  td{
-    border: 1.5px solid black;
-    font-size: 15px;
-    text-align: center;
-    padding: 9px;
-  }
-  .body-box tr:nth-child(odd){
-    background-color: rgb(224, 251, 244);
-  }
-  .body-box tr:nth-child(even){
-    background-color: rgb(214, 253, 243);
-  }
-  .head-box th, .body-box td{
-    border-radius: 6px;
-  }
-  td:hover{
-    cursor: pointer;
-    border-color: rgb(75, 109, 231);
-  } 
-  </style>
-  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="container">
-  <div class="inner-container"><h2>Customer's Orders <i class="fa-solid fa-phone-volume" style="font-size: 0.8em;"></i></h2>
-    <div class="innermost-container">
-      <a href="/admin/logout">Logout</a>
-      <table class="box">
-        <thead class="head-box">
-          <tr>
-              <th>Customers <i class="fa-regular fa-circle-user"></i></th>
-              <th>Phone Number <i class="fa-solid fa-mobile-screen"></i></th>
-          </tr>
-        </thead>
-        <tbody class="body-box">
-          <% requests.forEach(request => { %>
-            <tr>
-              <td><%= request.name %></td>
-              <td><%= request.phoneNumber %></td>
-            </tr>
-          <% }) %>
-        </tbody>
-      </table>
-      <a href="/admin/upload">Back to Upload</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customers</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+        font-size: 18px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url(/images/back3.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      h2 {
+        font-size: 1.8em;
+      }
+      .inner-container,
+      .innermost-container {
+        padding: 15px;
+        border: 2px solid black;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      .innermost-container {
+        backdrop-filter: blur(10px);
+        border: 1.5px solid black;
+      }
+      a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      table {
+        padding: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+      }
+      th {
+        border: 2px solid black;
+        font-size: 16px;
+        padding: 9px;
+        width: 80%;
+        background-color: rgb(212, 245, 254);
+      }
+      td {
+        border: 1.5px solid black;
+        font-size: 15px;
+        text-align: center;
+        padding: 9px;
+      }
+      .body-box tr:nth-child(odd) {
+        background-color: rgb(224, 251, 244);
+      }
+      .body-box tr:nth-child(even) {
+        background-color: rgb(214, 253, 243);
+      }
+      .head-box th,
+      .body-box td {
+        border-radius: 6px;
+      }
+      td:hover {
+        cursor: pointer;
+        border-color: rgb(75, 109, 231);
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/92d70a2fd8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner-container">
+        <h2>
+          Customer's Orders
+          <i class="fa-solid fa-phone-volume" style="font-size: 0.8em"></i>
+        </h2>
+        <div class="innermost-container">
+          <a href="/admin/logout">Logout</a>
+          <table class="box">
+            <thead class="head-box">
+              <tr>
+                <th>Customers <i class="fa-regular fa-circle-user"></i></th>
+                <th>Phone Number <i class="fa-solid fa-mobile-screen"></i></th>
+              </tr>
+            </thead>
+            <tbody class="body-box">
+              <% requests.forEach(request => { %>
+              <tr>
+                <td><%= request.name %></td>
+                <td><%= request.phoneNumber %></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          <a href="/admin/upload">Back to Upload</a>
+        </div>
+      </div>
     </div>
-  </div> 
-  </div>
-</body>
+  </body>
 </html>
