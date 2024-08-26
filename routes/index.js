@@ -35,4 +35,16 @@ router.get('/thank-you', (req, res) => {
   res.render('thankYou');
 });
 
+router.get('/policy', (req, res) => {
+  res.render('policy');
+});
+
+router.get('/about', (req, res) => {
+  res.render('about');
+});
+
+router.get('/guidelines', (req, res) => {
+  res.render('guidelines');
+});
+
 module.exports = router;
