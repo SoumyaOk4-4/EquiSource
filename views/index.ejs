@@ -504,6 +504,29 @@
         padding: 5px 15px;
       }
     }
+
+    .highlight-link {
+    color: white;
+    background-color: #ff4b2b; /* Bright red background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    animation: blink 1s infinite;
+  }
+
+  .highlight-link:hover {
+    background-color: #ff6b4b; /* Slightly lighter red on hover */
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
   </style>
   <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
   <script src="/main.js"></script>
@@ -566,6 +589,8 @@
     </div>
 
     <div class="footer">
+      <a href="https://forms.gle/9yVeABXfT887n1Hz8" class="highlight-link" target="_blank">Become An EquiSource Seller</a>
+      <br>
       <div class="social-icons">
         <b>Made With ❤ By: Soumya and Ayan</b>
       </div>
