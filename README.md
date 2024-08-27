@@ -4,7 +4,7 @@ A web application for renting products, built using Node.js, Express, EJS, and M
 ## Developers
 - Backend Developer: Soumya Chakraborty
 - Frontend Developer: Ayan Purkait
-- 
+  
 ## Tech Stack
 - Backend: Node.js, Express.js
 - Frontend: EJS (Embedded JavaScript Templates)
