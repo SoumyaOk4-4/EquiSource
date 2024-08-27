@@ -1,81 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rental Guidelines</title>
-    <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rental Guidelines</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url(/images/back6.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 43px;
+      border: 1px solid #3f80ff;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-color: rgba(0, 0, 0, 0.12);
+      box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
+        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+      box-sizing: border-box;
+      width: 100%;
+      margin: 15px;
+    }
+
+    @media (max-width: 768px) {
+      body{
+        height: 100vh;
+      }
+      .container {  
+        margin: 15px;
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 360px) {
       body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
+        height: 135vh;
       }
 
       .container {
-        max-width: 800px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        padding: 25px;
       }
 
       h1 {
-        text-align: center;
-        color: #3F80FF;
-        font-size: 2.5em;
-        margin-bottom: 20px;
+        font-size: 1.8em;
       }
 
-      p {
-        font-size: 1.2em;
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-
+      p,
       ul li {
-        background-color: #f9f9f9;
-        margin-bottom: 10px;
-        padding: 15px;
-        border-left: 5px solid #3F80FF;
-        border-radius: 5px;
+        font-size: 0.95em;
+        padding: 8px;
       }
 
       a {
-        display: inline-block;
-        margin-top: 20px;
-        text-decoration: none;
-        color: #3F80FF;
-        font-weight: bold;
+        font-size: 16px;
       }
+    }
 
-      a:hover {
-        color: orangered;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Rental Guidelines</h1>
-      <p>Thank you for choosing EquiSource. To ensure a smooth and hassle-free rental experience, please follow our guidelines below:</p>
+    h1 {
+      text-align: center;
+      color: #3F80FF;
+      font-size: 2.5em;
+      margin-bottom: 26px;
+    }
 
-      <ul>
-        <li><strong>Accurate Information:</strong> Please provide your real name and a valid phone number. This helps us contact you easily and ensures a seamless rental process.</li>
-        <li><strong>Data Security:</strong> Your phone number and personal information are secure with us. We prioritize your privacy and do not share your data with third parties.</li>
-        <li><strong>Care for the Items:</strong> Please handle the rented products with care to avoid damages. Any damages caused may result in additional fees.</li>
-      </ul>
+    p {
+      font-size: 1.2em;
+      color: #eeeeeee1;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      background-color: #f9f9f9e0;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-left: 5px solid #3F80FF;
+      border-radius: 5px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #3F80FF;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: orangered;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Rental Guidelines</h1>
+    <p>Thank you for choosing EquiSource. To ensure a smooth and hassle-free rental experience, please follow our
+      guidelines below:</p>
+
+    <ul>
+      <li><strong>Accurate Information:</strong> Please provide your real name and a valid phone number. This helps us
+        contact you easily and ensures a seamless rental process.</li>
+      <li><strong>Data Security:</strong> Your phone number and personal information are secure with us. We prioritize
+        your privacy and do not share your data with third parties.</li>
+      <li><strong>Care for the Items:</strong> Please handle the rented products with care to avoid damages. Any damages
+        caused may result in additional fees.</li>
+    </ul>
 
     <p>If you have any questions or concerns, feel free to contact us. <br>
-        <b style="color: rgb(114, 187, 255);">+91-9830338678 / +91-8336083172</b>
+      <b style="color: rgb(114, 187, 255);">+91-9830338678 / +91-8336083172</b>
     </p>
-      <a href="/">Back to Home</a>
-    </div>
-  </body>
+    <a href="/">Back to Home</a>
+  </div>
+</body>
 </html>

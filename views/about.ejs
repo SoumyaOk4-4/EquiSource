@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us</title>
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
@@ -16,26 +16,65 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+
+      background-image: url(/images/back6.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     .container {
       max-width: 800px;
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border: 1px solid #3f80ff;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-color: rgba(0, 0, 0, 0.12);
+      box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
+        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1px;
+        margin: 17px;
+      }
+
+      .text {
+        font-size: 16px;
+      }
+
+      .dev img {
+        padding: 10px;
+      }
+
+      .role {
+        padding: 5px;
+      }
+
     }
 
     h1 {
       font-size: 2.5em;
       margin-bottom: 20px;
-      color: #3F80FF;
+      color: #3f80ff;
     }
 
     p {
       font-size: 1.2em;
-      color: #333;
+      color: #eeeeeee1;
       line-height: 1.6;
+    }
+
+    .fa-brands {
+      font-size: 30px;
+      margin: 0 10px;
+      color: #bebaba;
+      cursor: pointer;
+    }
+
+    .fa-brands:hover {
+      color: orangered;
     }
 
     .devs {
@@ -58,21 +97,17 @@
     .dev h3 {
       margin-top: 10px;
       font-size: 1.5em;
-      color: #3F80FF;
+      color: #3f80ff;
     }
 
     .social-links a {
       margin: 0 10px;
       font-size: 1.5em;
-      color: #333;
-    }
-
-    .social-links a:hover {
-      color: orangered;
+      color: #eee;
     }
 
     a {
-      color: #3F80FF;
+      color: #3f80ff;
       text-decoration: none;
       font-weight: bold;
     }
@@ -82,38 +117,43 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>About Us</h1>
-    <p>Welcome to EquiSource, the best place to rent your desired college accessories. Our platform is designed to make renting simple and accessible for students. We are two passionate developers who have come together to build this platform from the ground up.</p>
+    <p class="text">
+      Welcome to EquiSource, the best place to rent your desired college
+      accessories. Our platform is designed to make renting simple and
+      accessible for students. We are two passionate developers who have come
+      together to build this platform from the ground up.
+    </p>
 
     <div class="devs">
       <div class="dev">
-        <img src="/images/soumya.png" alt="Soumya">
+        <img src="/images/soumya.png" alt="Soumya" />
         <h3>Soumya</h3>
-        <p>Backend Developer</p>
+        <p class="role" style="color: #00cdfefa">Backend Developer</p>
         <div class="social-links">
-            <a href="https://github.com/SoumyaOk4-4" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-            <a href="https://www.linkedin.com/in/soumya-chakraborty-122388225/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/SoumyaOk4-4" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+          <a href="https://www.linkedin.com/in/soumya-chakraborty-122388225/" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
         </div>
       </div>
       <div class="dev">
-        <img src="/images/ayan.jpg" alt="Ayan">
+        <img src="/images/ayan.jpg" alt="Ayan" />
         <h3>Ayan</h3>
-        <p>Frontend Developer</p>
+        <p class="role" style="color: #00cdfefa">Frontend Developer</p>
         <div class="social-links">
           <a href="https://github.com/JustChillinBro92" target="_blank"><i class="fa-brands fa-square-github"></i></a>
-          <a href="https://www.linkedin.com/in/ayan-purkait-615464289/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/ayan-purkait-615464289/" target="_blank"><i
+              class="fa-brands fa-linkedin"></i></a>
         </div>
       </div>
     </div>
 
     <p><a href="/">Back to Home</a></p>
   </div>
-  <script
-  src="https://kit.fontawesome.com/92d70a2fd8.js"
-  crossorigin="anonymous"
-></script>
+  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
 </body>
-</html>
 
+</html>
