@@ -31,6 +31,24 @@
       min-height: 100vh;
     }
 
+    .ontop{
+      margin-bottom: 1%;
+      margin-left: 95%;
+      background-color: #3f80ff;
+      backdrop-filter: blur(10px);
+      border: 3px solid black;
+      border-radius: 8px;
+      padding: 10px;
+      border-color: rgba(0, 0, 0, 0.12);
+      box-shadow: 0 0 1px rgba(2, 31, 59, 0.7),
+        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+    }
+    .ontop i{
+      color: black;
+      font-weight: bold;
+    }
+
     .sidebar {
       width: 80%;
       display: flex;
@@ -358,6 +376,9 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+      .ontop{
+        margin-left: 87%;
+    }
 
       .dots-container {
         margin-right: 67%;
@@ -539,7 +560,7 @@
       <div class="sidehead">
         <div class="header">
           <nav class="navbar">
-            <p>EquiSource</p>
+            <p id="on-top">EquiSource</p>
             <ul>
               <li><a href="/about">About Us</a></li>
               <li><a href="/guidelines">Guidelines</a></li>
@@ -589,6 +610,7 @@
       </div>
     </div>
 
+    <div class="ontop"><a href="#on-top" style="text-decoration: none;"><i class="fa-solid fa-arrow-up"></i></i></a></div>
     <div class="footer">
       <a href="https://forms.gle/9yVeABXfT887n1Hz8" class="highlight-link" target="_blank" style="margin-top: 10px;">Become An EquiSource Seller</a>
       <br>
