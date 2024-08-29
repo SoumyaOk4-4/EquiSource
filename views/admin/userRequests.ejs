@@ -91,17 +91,23 @@
         <div class="innermost-container">
           <a href="/admin/logout">Logout</a>
           <table class="box">
-            <thead class="head-box">
+            <thead>
               <tr>
-                <th>Customers <i class="fa-regular fa-circle-user"></i></th>
-                <th>Phone Number <i class="fa-solid fa-mobile-screen"></i></th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Product Name</th>
+                <th>Edit</th>
               </tr>
             </thead>
-            <tbody class="body-box">
+            <tbody>
               <% requests.forEach(request => { %>
               <tr>
                 <td><%= request.name %></td>
                 <td><%= request.phoneNumber %></td>
+                <td><%= request.itemName %></td>
+                <td>
+                  <a href="/edit-request/<%= request._id %>">Edit</a>
+                </td>
               </tr>
               <% }) %>
             </tbody>
