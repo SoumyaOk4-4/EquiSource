@@ -74,7 +74,7 @@ router.post('/update-request/:id', adminAuth, async (req, res) => {
       return res.status(404).send('Request not found');
     }
 
-    res.redirect('/user-requests');
+    res.redirect('/admin/user-requests');
   } catch (error) {
     console.error('Error updating request:', error);
     res.status(500).send('Internal Server Error');
