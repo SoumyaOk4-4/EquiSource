@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EquiSource: Best place to rent</title>
-  <link rel="icon" href="/images/logo.png" type="image/png" style="border-radius: 3px;"/>
+  <link rel="icon" href="/images/logo.png" type="image/png" style="border-radius: 3px;" />
   <style>
     * {
       padding: 0;
@@ -31,21 +31,21 @@
       min-height: 100vh;
     }
 
-    .ontop{
-      position: absolute;
-      right: 14px;
+    .ontop {
+      margin-left: 97%;
+      margin-bottom: 0.8%;
       backdrop-filter: blur(10px);
       border: 2px solid black;
       border-radius: 8px;
       padding: 10px;
-      background-color: rgba(255, 255, 255, .25);
+      background-color: rgb(9 156 255 / 80%);
       border-color: rgba(0, 0, 0, 0.12);
       box-shadow: 0 0 1px rgba(2, 31, 59, 0.7),
         1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
         4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
     }
 
-    .ontop i{
+    .ontop i {
       color: black;
       font-weight: bold;
     }
@@ -367,6 +367,11 @@
         grid-template-columns: repeat(2, 1fr);
         margin-bottom: 20px;
       }
+
+      .ontop{
+        margin-left: 93%;
+        margin-bottom: 1.5%;
+      }
     }
 
     @media (max-width: 768px) {
@@ -377,7 +382,7 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
-    
+
       .dots-container {
         margin-right: 67%;
       }
@@ -484,6 +489,11 @@
       .img-box {
         height: 120px;
       }
+
+      .ontop{
+        margin-left: 92%;
+        margin-bottom: 2%;
+      }
     }
 
     @media (max-width: 480px) {
@@ -523,42 +533,52 @@
       button {
         padding: 5px 15px;
       }
+
+      .ontop{
+        margin-left: 88%;
+        margin-bottom: 2%;
+      }
     }
 
     .highlight-link {
-    color: white;
-    background-color: #ff4b2b; /* Bright red background */
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    animation: blink 1s infinite;
-  }
-
-  .highlight-link:hover {
-    background-color: #ff6b4b; /* Slightly lighter red on hover */
-  }
-
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
+      color: white;
+      background-color: #ff4b2b;
+      /* Bright red background */
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      animation: blink 1s infinite;
     }
-    50% {
-      opacity: 0.5;
+
+    .highlight-link:hover {
+      background-color: #ff6b4b;
+      /* Slightly lighter red on hover */
     }
-  }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
   </style>
   <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
   <script src="/main.js"></script>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container"  id="on-top">
     <div class="sidebar">
       <div class="sidehead">
         <div class="header">
           <nav class="navbar">
-            <p id="on-top">EquiSource</p>
+            <p>EquiSource</p>
             <ul>
               <li><a href="/about">About Us</a></li>
               <li><a href="/guidelines">Guidelines</a></li>
@@ -608,9 +628,10 @@
       </div>
     </div>
 
-    
+    <div class="ontop"><a href="#on-top" style="text-decoration: none;"><i class="fa-solid fa-arrow-up"></i></a></div>
     <div class="footer">
-      <a href="https://forms.gle/9yVeABXfT887n1Hz8" class="highlight-link" target="_blank" style="margin-top: 10px;">Become An EquiSource Seller</a>
+      <a href="https://forms.gle/9yVeABXfT887n1Hz8" class="highlight-link" target="_blank"
+        style="margin-top: 10px;">Become An EquiSource Seller</a>
       <br>
       <div class="social-icons">
         <b>Made With ❤ By: Soumya and Ayan</b>
@@ -619,7 +640,6 @@
       <div class="follow">
         <p>EquiSource © 2024 | All Rights Reserved</p>
       </div>
-      <div class="ontop"><a href="#on-top" style="text-decoration: none;"><i class="fa-solid fa-arrow-up"></i></a></div>
     </div>
   </div>
   <script>
