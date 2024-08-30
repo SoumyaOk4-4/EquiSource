@@ -85,6 +85,10 @@ router.get('/v1/learn', async (req, res) => {
   res.render('v1/learn');
 });
 
+router.get('/v1/price', async (req, res) => {
+  res.render('v1/price');
+});
+
 //eggs
 router.get('/eggs/tic-tac', async (req, res) => {
   res.render('eggs/ticTac');
