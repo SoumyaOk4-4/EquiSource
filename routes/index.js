@@ -21,7 +21,7 @@ router.get('/rent-form', (req, res) => {
 
 router.post('/rent', async (req, res) => {
   const { name, phoneNumber, itemName } = req.body;
-  
+
   const userRequest = new UserRequest({
     name,
     phoneNumber,
@@ -79,6 +79,23 @@ router.post('/update-request/:id', adminAuth, async (req, res) => {
     console.error('Error updating request:', error);
     res.status(500).send('Internal Server Error');
   }
+});
+
+router.get('/v1/learn', async (req, res) => {
+  res.render('v1/learn');
+});
+
+//eggs
+router.get('/eggs/tic-tac', async (req, res) => {
+  res.render('eggs/ticTac');
+});
+
+router.get('/eggs/calc', async (req, res) => {
+  res.render('eggs/calculator');
+});
+
+router.get('/eggs/snake', async (req, res) => {
+  res.render('eggs/snake');
 });
 
 module.exports = router;

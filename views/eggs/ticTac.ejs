@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <title>Tic-Tac-Toe by Soumya</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+      }
+
+      table {
+        background-color: #fff;
+        border-collapse: collapse;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 90vw;
+        max-width: 400px;
+        height: auto;
+      }
+
+      td {
+        width: 33.33%;
+        padding-bottom: 33.33%; /* This ensures a square aspect ratio */
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 6vw; /* Responsive font size based on viewport width */
+        font-weight: bold;
+        border: 1px solid #d9d9d9;
+        transition: all 0.2s ease-in-out;
+      }
+
+      td:hover {
+        background-color: #f2f2f2;
+        cursor: pointer;
+      }
+
+      td::after {
+        content: attr(data-content);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 4vw; /* Responsive font size */
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+      }
+
+      #reset-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        font-size: 4vw; /* Responsive font size */
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      #reset-button:hover {
+        background-color: #3e8e41;
+      }
+
+      #title {
+        margin-bottom: 20px;
+        font-size: 6vw; /* Responsive font size */
+        font-weight: bold;
+        color: #333;
+      }
+
+      #scoreboard {
+        margin-top: 10px;
+        width: 70px;
+        height: 70px;
+        background-color: #fff;
+        border-radius: 35px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+        color: #333;
+      }
+
+      @media (min-width: 768px) {
+        td {
+          font-size: 36px; /* Fixed font size for larger screens */
+        }
+
+        #result {
+          font-size: 24px;
+        }
+
+        #reset-button {
+          font-size: 18px;
+        }
+
+        #title {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="title">Tic-Tac-Toe by Soumya</div>
+    <table id="game-board">
+      <tr>
+        <td id="cell-0" data-content=""></td>
+        <td id="cell-1" data-content=""></td>
+        <td id="cell-2" data-content=""></td>
+      </tr>
+      <tr>
+        <td id="cell-3" data-content=""></td>
+        <td id="cell-4" data-content=""></td>
+        <td id="cell-5" data-content=""></td>
+      </tr>
+      <tr>
+        <td id="cell-6" data-content=""></td>
+        <td id="cell-7" data-content=""></td>
+        <td id="cell-8" data-content=""></td>
+      </tr>
+    </table>
+    <div id="result">Let's start the game!</div>
+    <button id="reset-button">Reset</button>
+    <script>
+      const cells = document.querySelectorAll("td");
+      const resultDisplay = document.querySelector("#result");
+      let currentPlayer = "X";
+
+      for (const cell of cells) {
+        cell.addEventListener("click", handleCellClick);
+      }
+
+      document
+        .querySelector("#reset-button")
+        .addEventListener("click", handleResetClick);
+
+      function handleCellClick() {
+        if (this.getAttribute("data-content") === "") {
+          this.setAttribute("data-content", currentPlayer);
+          if (checkForWinningCombination()) {
+            resultDisplay.textContent = currentPlayer + " wins! Play again?";
+            for (const cell of cells) {
+              cell.removeEventListener("click", handleCellClick);
+            }
+          } else if (checkForDraw()) {
+            resultDisplay.textContent = "Draw! Play again?";
+            for (const cell of cells) {
+              cell.removeEventListener("click", handleCellClick);
+            }
+          } else {
+            switchPlayer();
+          }
+        }
+      }
+
+      function checkForWinningCombination() {
+        // Check rows
+        for (let i = 0; i < 9; i += 3) {
+          if (
+            cells[i].getAttribute("data-content") === currentPlayer &&
+            cells[i + 1].getAttribute("data-content") === currentPlayer &&
+            cells[i + 2].getAttribute("data-content") === currentPlayer
+          ) {
+            return true;
+          }
+        }
+
+        // Check columns
+        for (let i = 0; i < 3; i++) {
+          if (
+            cells[i].getAttribute("data-content") === currentPlayer &&
+            cells[i + 3].getAttribute("data-content") === currentPlayer &&
+            cells[i + 6].getAttribute("data-content") === currentPlayer
+          ) {
+            return true;
+          }
+        }
+
+        // Check diagonals
+        if (
+          cells[0].getAttribute("data-content") === currentPlayer &&
+          cells[4].getAttribute("data-content") === currentPlayer &&
+          cells[8].getAttribute("data-content") === currentPlayer
+        ) {
+          return true;
+        }
+        if (
+          cells[2].getAttribute("data-content") === currentPlayer &&
+          cells[4].getAttribute("data-content") === currentPlayer &&
+          cells[6].getAttribute("data-content") === currentPlayer
+        ) {
+          return true;
+        }
+
+        return false;
+      }
+
+      function checkForDraw() {
+        for (const cell of cells) {
+          if (cell.getAttribute("data-content") === "") {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function switchPlayer() {
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
+      }
+
+      function handleResetClick() {
+        for (const cell of cells) {
+          cell.setAttribute("data-content", "");
+          cell.addEventListener("click", handleCellClick);
+        }
+        resultDisplay.textContent = "Let's start the game!";
+        currentPlayer = "X";
+      }
+    </script>
+  </body>
+</html>

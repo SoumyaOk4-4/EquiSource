@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <meta charset="UTF-8">
+  <title>Responsive Calculator by Soumya</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+    }
+
+    #calculator {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+      width: 90vw;
+      max-width: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    #display {
+      width: 100%;
+      height: 60px;
+      background-color: #e6e6e6;
+      border-radius: 8px;
+      font-size: 24px;
+      text-align: right;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #current-number, #operator {
+      font-size: 24px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      width: 22%;
+      height: 60px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #3e8e41;
+    }
+
+    .button.operation {
+      background-color: #2196f3;
+    }
+
+    .button.operation:hover {
+      background-color: #1976d2;
+    }
+
+    .button.clear {
+      background-color: #f44336;
+    }
+
+    .button.clear:hover {
+      background-color: #d32f2f;
+    }
+
+    @media (min-width: 768px) {
+      #display {
+        font-size: 36px;
+      }
+
+      .button {
+        font-size: 28px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="calculator">
+    <div id="display">
+      <div id="previous-number"></div>
+      <div id="operator"></div>
+      <div id="current-number">0</div>
+    </div>
+    <div class="button-row">
+      <button class="button" onclick="appendNumber('7')">7</button>
+      <button class="button" onclick="appendNumber('8')">8</button>
+      <button class="button" onclick="appendNumber('9')">9</button>
+      <button class="button operation" onclick="chooseOperation('/')">/</button>
+    </div>
+    <div class="button-row">
+      <button class="button" onclick="appendNumber('4')">4</button>
+      <button class="button" onclick="appendNumber('5')">5</button>
+      <button class="button" onclick="appendNumber('6')">6</button>
+      <button class="button operation" onclick="chooseOperation('*')">*</button>
+    </div>
+    <div class="button-row">
+      <button class="button" onclick="appendNumber('1')">1</button>
+      <button class="button" onclick="appendNumber('2')">2</button>
+      <button class="button" onclick="appendNumber('3')">3</button>
+      <button class="button operation" onclick="chooseOperation('-')">-</button>
+    </div>
+    <div class="button-row">
+      <button class="button clear" onclick="clearDisplay()">C</button>
+      <button class="button" onclick="appendNumber('0')">0</button>
+      <button class="button" onclick="calculate()">=</button>
+      <button class="button operation" onclick="chooseOperation('+')">+</button>
+    </div>
+  </div>
+
+  <script>
+    let currentNumber = '';
+    let previousNumber = '';
+    let operation = null;
+
+    function appendNumber(number) {
+      if (currentNumber.length >= 10) return; // Limit number length to 10 digits
+      if (currentNumber === '' && number === '0') return; // Prevent leading zeros
+      currentNumber += number;
+      updateDisplay();
+    }
+
+    function chooseOperation(op) {
+      if (currentNumber === '') return;
+      if (previousNumber !== '') {
+        calculate();
+      }
+      operation = op;
+      previousNumber = currentNumber;
+      currentNumber = '';
+      updateDisplay();
+    }
+
+    function calculate() {
+      let result;
+      const prev = parseFloat(previousNumber);
+      const curr = parseFloat(currentNumber);
+
+      if (isNaN(prev) || isNaN(curr)) return;
+
+      switch (operation) {
+        case '+':
+          result = prev + curr;
+          break;
+        case '-':
+          result = prev - curr;
+          break;
+        case '*':
+          result = prev * curr;
+          break;
+        case '/':
+          result = prev / curr;
+          break;
+        default:
+          return;
+      }
+
+      currentNumber = result.toString().slice(0, 10); // Limit the display to 10 digits
+      operation = null;
+      previousNumber = '';
+      updateDisplay();
+    }
+
+    function clearDisplay() {
+      currentNumber = '';
+      previousNumber = '';
+      operation = null;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      document.getElementById('previous-number').textContent = previousNumber;
+      document.getElementById('current-number').textContent = currentNumber || '0';
+      document.getElementById('operator').textContent = operation || '';
+    }
+  </script>
+
+</body>
+</html>
