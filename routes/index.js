@@ -6,7 +6,7 @@ const adminAuth = require('../middlewares/adminAuth');
 
 router.get('/', async (req, res) => {
   try {
-    const items = await Item.find({});
+    const items = await Item.aggregate([{ $sample: { size: await Item.countDocuments() } }]);
     res.render('index', { items });
   } catch (error) {
     console.error('Error fetching items:', error);
