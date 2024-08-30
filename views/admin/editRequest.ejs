@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Request</title>
 </head>
+
 <body>
-  <h1>Edit User Request</h1>
-  <form action="/update-request/<%= request._id %>" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="<%= request.name %>" required><br>
+  <div class="container">
+    <div class="form">
+      <h1>Edit User Request</h1>
+      <form action="/update-request/<%= request._id %>" method="POST">
 
-    <label for="phoneNumber">Phone Number:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" value="<%= request.phoneNumber %>" required><br>
+        <div class="name">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="<%= request.name %>" required>
+        </div>
 
-    <label for="itemName">Item Name:</label>
-    <input type="text" id="itemName" name="itemName" value="<%= request.itemName %>" required><br>
+        <div class="number">
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" value="<%= request.phoneNumber %>" required>
+        </div>
 
-    <button type="submit">Update Request</button>
-  </form>
-  <a href="/admin/user-requests">Back to User Requests</a>
+        <div class="item">
+          <label for="itemName">Item Name:</label>
+          <input type="text" id="itemName" name="itemName" value="<%= request.itemName %>" required>
+        </div>
+
+        <div class="button">
+          <button type="submit">Update Request</button>
+        </div>
+      </form>
+      <div class="back">
+        <a href="/admin/user-requests">Back to User Requests</a>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>

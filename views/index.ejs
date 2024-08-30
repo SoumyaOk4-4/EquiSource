@@ -17,10 +17,7 @@
 
     body {
       margin: 0;
-      background-image: url(/images/back6.png);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      background-image: linear-gradient(90deg, #000000, #0e1c3feb);
     }
 
     .container {
@@ -29,25 +26,6 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-    }
-
-    .ontop {
-      margin-left: 97%;
-      margin-bottom: 0.8%;
-      backdrop-filter: blur(10px);
-      border: 2px solid black;
-      border-radius: 8px;
-      padding: 10px;
-      background-color: rgb(9 156 255 / 80%);
-      border-color: rgba(0, 0, 0, 0.12);
-      box-shadow: 0 0 1px rgba(2, 31, 59, 0.7),
-        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
-        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
-    }
-
-    .ontop i {
-      color: black;
-      font-weight: bold;
     }
 
     .sidebar {
@@ -367,22 +345,9 @@
         grid-template-columns: repeat(2, 1fr);
         margin-bottom: 20px;
       }
-
-      .ontop{
-        margin-left: 93%;
-        margin-bottom: 1.5%;
-      }
     }
 
     @media (max-width: 768px) {
-      body {
-        margin: 0;
-        background-image: url(/images/back6.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
       .dots-container {
         margin-right: 67%;
       }
@@ -489,22 +454,9 @@
       .img-box {
         height: 120px;
       }
-
-      .ontop{
-        margin-left: 92%;
-        margin-bottom: 2%;
-      }
     }
 
     @media (max-width: 480px) {
-      body {
-        margin: 0;
-        background-image: url(/images/back6.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
       .dots-container {
         margin-right: 97%;
       }
@@ -533,17 +485,11 @@
       button {
         padding: 5px 15px;
       }
-
-      .ontop{
-        margin-left: 88%;
-        margin-bottom: 2%;
-      }
     }
 
     .highlight-link {
       color: white;
       background-color: #ff4b2b;
-      /* Bright red background */
       padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
@@ -553,7 +499,6 @@
 
     .highlight-link:hover {
       background-color: #ff6b4b;
-      /* Slightly lighter red on hover */
     }
 
     @keyframes blink {
@@ -630,7 +575,7 @@
 
     <div class="footer">
       <a href="https://forms.gle/9yVeABXfT887n1Hz8" class="highlight-link" target="_blank"
-        style="margin-top: 10px;">Become An EquiSource Seller</a>
+        style="margin-top: 10px;">Request a Product</a>
       <br>
       <div class="social-icons">
         <b>Made With ❤ By: Soumya and Ayan</b>
@@ -662,11 +607,6 @@
           sideMenu.classList.remove('active');
         }
       });
-
-      document.body.style.backgroundImage = "url('/images/back6.png')";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundPosition = "center";
-      document.body.style.backgroundRepeat = "no-repeat"
 
       const itemsArray = [
             <% items.forEach(item => { %>
@@ -717,7 +657,7 @@
                     <h3>Price: ₹${item.price}</h3>
                     <h2>Status: ${item.available ? 'Available' : 'Not Available'}</h2>
                     ${item.available
-              ? `<button onclick="rentItem('${item.name}')">Rent Now</button>`
+              ? `<button onclick="rentItem('${item.name}')">Rent/Buy Now</button>`
               : `<button disabled>Out of stock</button>`}
                   </div>
                 </div>`

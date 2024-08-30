@@ -1,21 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rent Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'poppins', sans-serif;
+      font-size: 18px;
+    }
+
+    body {
+      margin: 0;
+      background-image: linear-gradient(90deg, #000000, #0e1c3feb);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: rgb(226, 216, 216);
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form {
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .box{
+      border: 1px solid;
+      border-radius: 16px;
+      border-color: rgba(0, 0, 0, 0.12);
+      background-color: rgba(0, 0, 0, 0.4);
+      box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
+        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: bold;
+      color: rgb(18, 93, 224);
+    }
+
+    .name,
+    .number,
+    .button {
+      margin-bottom: 15px;
+      background: none;
+    }
+
+    input[type="text"]{
+      border: 3px solid black;
+      border-radius: 18px;
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      outline: none;
+      color: rgb(203, 193, 193);
+      background-color: rgb(46, 41, 41);
+    }
+
+    button[type="submit"] {
+      width: 40%;
+      padding: 13px;
+      border: 3px solid black;
+      border-radius: 18px;
+      color: rgb(203, 193, 193);
+      background-color: rgb(46, 41, 41);
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    input:hover {
+      border-color: rgb(21, 81, 232);
+    }
+
+    button[type="submit"]:hover {
+      border-color: rgb(21, 81, 232);
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Rent Item</h1>
-  <form action="/rent" method="POST">
-    <input type="hidden" name="itemName" value="<%= itemName %>">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <br>
-    <label for="phoneNumber">Phone Number:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" required>
-    <br>
-    <button type="submit">Submit</button>
-  </form>
+  <div class="container">
+    <div class="form">
+      <h1>Enter Your Details:</h1>
+      <form action="/rent" method="POST">
+
+        <input type="hidden" name="itemName" value="<%= itemName %>">
+        <div class="box">
+          <div class="name">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+  
+          <div class="number">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+          </div>
+  
+          <div class="button">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
+
 </html>

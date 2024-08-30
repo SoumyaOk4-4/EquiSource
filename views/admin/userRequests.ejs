@@ -13,16 +13,18 @@
         font-family: "poppins", sans-serif;
         font-size: 18px;
       }
+      body{
+        background-image: url(/images/back3.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
       .container {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        min-height: 100vh;
-        background-image: url(/images/back3.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        min-height: 100vh;     
       }
       h2 {
         font-size: 1.8em;
@@ -33,16 +35,17 @@
         border: 2px solid black;
         border-radius: 6px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        width: 100%;
+        max-width: 600px;
       }
       .innermost-container {
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(3px);
         border: 1.5px solid black;
+        width: 26rem;
       }
       a {
         text-decoration: none;
         font-weight: bold;
+        color: rgba(3, 59, 171, 0.8);
       }
       table {
         padding: 0;
@@ -51,30 +54,45 @@
       }
       th {
         border: 2px solid black;
+        border-radius: 6px;
         font-size: 16px;
-        padding: 9px;
+        font-weight: bold;
+        padding: 8px;
         width: 80%;
         background-color: rgb(212, 245, 254);
       }
       td {
         border: 1.5px solid black;
+        border-radius: 6px;
         font-size: 15px;
+        font-weight: bold;
         text-align: center;
         padding: 9px;
-      }
-      .body-box tr:nth-child(odd) {
-        background-color: rgb(224, 251, 244);
-      }
-      .body-box tr:nth-child(even) {
-        background-color: rgb(214, 253, 243);
-      }
-      .head-box th,
-      .body-box td {
-        border-radius: 6px;
       }
       td:hover {
         cursor: pointer;
         border-color: rgb(75, 109, 231);
+      }
+      @media (max-width: 768px){
+        body{
+          height: 110vh;
+        }
+        .inner-container{
+          width: 25rem;
+        }
+        .innermost-container{
+          width: 23rem;
+        }
+        table{
+          width: 100%;
+        }
+        th{
+          width: auto;
+          font-size: 15px;
+        }
+        td{
+          font-size: 14px;
+        }
       }
     </style>
     <script
@@ -94,10 +112,10 @@
           <table class="box">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Phone Number</th>
-                <th>Product Name</th>
-                <th>Edit</th>
+                <th>Name <i class="fa-regular fa-user"></i></i></th>
+                <th>Phone Number <i class="fa-solid fa-mobile-screen"></i></th>
+                <th>Product Name <i class="fa-solid fa-cart-shopping"></i></th>
+                <th>Edit <i class="fa-regular fa-pen-to-square"></i></th>
               </tr>
             </thead>
             <tbody>

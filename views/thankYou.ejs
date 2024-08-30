@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You</title>
   <style>
     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
-    font-size: 18px;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'poppins', sans-serif;
+      font-size: 18px;
     }
-    .container{
+
+    .container {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -23,7 +25,8 @@
       background-position: center;
       background-size: cover;
     }
-    .header{
+
+    .box {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -32,21 +35,27 @@
       border-radius: 8px;
       background-color: rgb(217, 244, 244);
       padding: 30px;
+      height: 50vh;
     }
-    .tick{
+
+    .tick {
       padding: 20px;
       text-align: center;
       font-size: 4em;
     }
-    h1,h2{
-    font-size: 1.8em;
+
+    h1,
+    h2 {
+      font-size: 1.8em;
     }
-    h2{
+
+    h2 {
       font-size: 1.1em;
       font-weight: lighter;
       color: grey;
     }
-    a{
+
+    a {
       border: 1.8px solid rgb(16, 174, 118);
       padding: 10px;
       border-radius: 8px;
@@ -56,21 +65,62 @@
       font-weight: bold;
       margin-top: 15px;
     }
-    a:hover{
+
+    a:hover {
       cursor: pointer;
       border-color: aquamarine;
     }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+
+      @media (max-width: 480px) {
+        .box{
+          height: 40vh;
+        }
+
+        h1 {
+          font-size: 1.3em;
+        }
+
+        h2 {
+          font-size: 0.9em;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .box{
+          height: 45vh;
+        }
+
+        h1 {
+          font-size: 1em;
+        }
+
+        h2 {
+          font-size: 0.6em;
+        }
+      }
   </style>
   <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div class="container">
-    <div class="header">
+    <div class="box">
       <i class="fa-regular fa-circle-check tick"></i>
-      <h1>Thank You for Renting!</h1>
+      <h1>Thank You for Your Purchase!</h1>
       <h2>We will contact you shortly</h2>
       <a href="/">Back to Home</a>
     </div>
   </div>
 </body>
+
 </html>
