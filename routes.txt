@@ -1,6 +1,5 @@
 # docs
 url:port/v1/learn
-url:port/v1/price
 
 # eggs
 url:port/eggs/calc
@@ -10,4 +9,3 @@ url:port/eggs/snake
 # admin
 url:port/admin/user-requests
 url:port/admin/upload
-
