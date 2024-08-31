@@ -1,25 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Price on EquiSource</title>
-    <style>
-        th{
-            border: 1px solid red;
-            padding: 2%;
-        }
-        td{
-            border: 1px solid black;
-            padding: 2%;
-            text-align: center;
-        }
-    </style>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Price on EquiSource</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(90deg, #000000, #0e1c3feb);
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
+        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+      box-sizing: border-box;
+      width: 95%;
+      height: 100vh; /* Make container taller */
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h2 {
+      color: #eeeeeee1;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      margin-bottom: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #3F80FF;
+      padding: 10px;
+      color: #eeeeeee1;
+    }
+
+    th {
+      background-color: rgba(63, 128, 255, 0.3);
+    }
+
+    td {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    h4 {
+      color: #eeeeeee1;
+      margin-top: 10px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #3F80FF;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: orangered;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 15px;
+        padding: 25px;
+        height: auto; /* Adjust height for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        height: 130vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
     <h2>
-      This is the fixed price of the products you want to sell or buy or rent from here. Best for
-      both the customer the seller❤️.
+      Standardized Pricing for Rental, Purchase, and Sale of Products
     </h2>
     <table>
       <thead>
@@ -31,18 +117,20 @@
       </thead>
       <tbody>
         <tr>
-            <td>ED Kit</td>
-            <td>300</td>
-            <td>500</td>
+          <td>ED Kit</td>
+          <td>300</td>
+          <td>500</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
     <h4>* This chart will update according to the market price.</h4>
     <a href="/">Back to Home</a>
-  </body>
+  </div>
+</body>
+
 </html>
