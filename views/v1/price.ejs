@@ -1,134 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Price on EquiSource</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(90deg, #000000, #0e1c3feb);
+        overflow: hidden; /* Prevent scrolling */
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-  <title>Price on EquiSource</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-image: linear-gradient(90deg, #000000, #0e1c3feb);
-      overflow: hidden; /* Prevent scrolling */
-    }
-
-    .container {
-      max-width: 800px;
-      padding: 40px;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 10px;
-      box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
-        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
-        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
-      box-sizing: border-box;
-      width: 95%;
-      max-height: 90vh; /* Prevent excessive height */
-      margin: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: auto; /* Enable scrolling within the container if needed */
-    }
-
-    h2 {
-      color: #eeeeeee1;
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      margin-bottom: 20px;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #3F80FF;
-      padding: 10px;
-      color: #eeeeeee1;
-    }
-
-    th {
-      background-color: rgba(63, 128, 255, 0.3);
-    }
-
-    td {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    h4 {
-      color: #eeeeeee1;
-      margin-top: 10px;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 20px;
-      text-decoration: none;
-      color: #3F80FF;
-      font-weight: bold;
-    }
-
-    a:hover {
-      color: orangered;
-    }
-
-    @media (max-width: 768px) {
       .container {
+        max-width: 800px;
+        padding: 50px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
+          1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+          4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+        box-sizing: border-box;
+        width: 97%;
+        max-height: 90vh; /* Prevent excessive height */
         margin: 15px;
-        padding: 25px;
-        max-height: 80vh; /* Adjust height for smaller screens */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: auto; /* Enable scrolling within the container if needed */
       }
-    }
 
-    @media (max-width: 480px) {
-      .container {
-        max-height: 70vh; /* Further adjust height for very small screens */
+      h2 {
+        color: #eeeeeee1;
+        font-size: 1.5em;
+        margin-bottom: 20px;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div class="container">
-    <h2>
-      Standardized Pricing for Rental, Purchase, and Sale of Products
-    </h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Name of the Product</th>
-          <th>Rent Price</th>
-          <th>Buy Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ED Kit</td>
-          <td>300</td>
-          <td>500</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    <h4>* This chart will update according to the market price.</h4>
-    <a href="/">Back to Home</a>
-  </div>
-</body>
+      table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+      }
 
+      th,
+      td {
+        border: 1px solid #3f80ff;
+        padding: 10px;
+        color: #eeeeeee1;
+      }
+
+      th {
+        background-color: rgba(63, 128, 255, 0.3);
+      }
+
+      td {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      h4 {
+        color: #eeeeeee1;
+        margin-top: 10px;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 20px;
+        text-decoration: none;
+        color: #3f80ff;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: orangered;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          margin: 15px;
+          padding: 25px;
+          max-height: 80vh; /* Adjust height for smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          max-height: 70vh; /* Further adjust height for very small screens */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <br>
+      <h2>Standardized Pricing for Rental, Purchase, and Sale of Products. You can't exceed the price more than MRP.</h2>  
+      <p style="color: #81abff; background: #000; border: 1px solid black; padding: 5px;">For sellers "You can charge less". <br>For customers "You can negotiate".</p>
+      <h4>Compare between our price and market price 💵</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Rent MRP</th>
+            <th>Buy MRP</th>
+            <th>Market Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ED Kit</td>
+            <td>300</td>
+            <td>450</td>
+            <td>720+</td>
+          </tr>
+          <tr>
+            <td>Appron</td>
+            <td>75</td>
+            <td>100</td>
+            <td>180+</td>
+          </tr>
+          <tr>
+            <td>Notes sem</td>
+            <td>-</td>
+            <td>450</td>
+            <td>1000+</td>
+          </tr>
+          <tr>
+            <td>Organiser hardcopy</td>
+            <td>-</td>
+            <td>150</td>
+            <td>800+</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/">Back to Home</a>
+    </div>
+  </body>
 </html>
