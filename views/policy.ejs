@@ -1,96 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
 
-  <title>Rental Policy</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      color: #333;
+    <title>Rental Policy</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        color: #333;
 
-      background-image: linear-gradient(90deg, #000000, #0e1c3feb);
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      border: 1px solid #3f80ff;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-color: rgba(0, 0, 0, 0.12);
-      box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
-        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
-        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        margin: 15px;
+        background-image: linear-gradient(90deg, #000000, #0e1c3feb);
       }
-    }
 
-    h1 {
-      text-align: center;
-      color: #3F80FF;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid #3f80ff;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-color: rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
+          1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+          4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+      }
 
-    p {
-      font-size: 1.2em;
-      color: #eeeeeee1;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+      @media (max-width: 768px) {
+        .container {
+          margin: 15px;
+        }
+      }
 
-    .highlight {
-      font-weight: bold;
-      color: orangered;
-    }
+      h1 {
+        text-align: center;
+        color: #3f80ff;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
 
-    a {
-      display: inline-block;
-      font-size: 20px;
-      margin-top: 20px;
-      text-decoration: none;
-      color: #3F80FF;
-      font-weight: bold;
-    }
+      li {
+        font-size: 1em;
+        color: #eeeeeee1;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
 
-    a:hover {
-      color: orangered;
-    }
-  </style>
-</head>
+      .highlight {
+        font-weight: bold;
+        color: orangered;
+      }
 
-<body>
-  <div class="container">
-    <h1>Rental Policy</h1>
-    <p>
-      When you rent a product from EquiSource, you are responsible for
-      maintaining the product in good condition. If the rented product is damaged, you
-      will be required to pay the
-      <span class="highlight">current market price</span> of the product as of
-      the return date.
-    </p>
-    <p>Please take care of the items you rent to avoid any additional charges.</p>
-    <p style="font-weight: bold;color: orangered">NOTE:</p>
-    <P style="font-weight: bold;">Don't try to run any form of penetration test on the website.</P>
-    <a href="/">Back to Home</a>
-  </div>
-</body>
+      a {
+        display: inline-block;
+        font-size: 20px;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #3f80ff;
+        font-weight: bold;
+      }
 
+      a:hover {
+        color: orangered;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Policy</h1>
+      <ol>
+        <li>
+          <strong>Damage Compensation: </strong>If an item you rent is damaged,
+          lost, or broken during the rental period, you are responsible for
+          compensating the seller with the current market price of the product.
+        </li>
+        <li>
+          <strong>Item Care: </strong>We kindly ask that you handle rented items
+          with care. Proper use will prevent unnecessary charges and ensure a
+          smooth rental experience for all parties involved.
+        </li>
+        <li>
+          <strong>Returns and Fines: </strong>All rented items must be returned
+          as per the contract agreed upon at the time of rental. Failure to
+          return the product on time or as specified may result in a penalty
+          fee, which will be charged to the customer.
+        </li>
+        <li>
+          <strong>Centralized Pricing: </strong>For fairness and transparency,
+          all similar products are sold at a standardized price, ensuring the
+          best value for both buyers and sellers.
+        </li>
+        <li>
+          <strong>Website Security: </strong>Any unauthorized access attempts,
+          including penetration testing or hacking, are strictly prohibited.
+          Legal action may be pursued against violators.
+        </li>
+      </ol>
+      <a href="/">Back to Home</a>
+    </div>
+  </body>
 </html>
