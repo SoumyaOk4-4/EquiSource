@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   <title>Price on EquiSource</title>
   <style>
     body {
@@ -17,6 +17,7 @@
       justify-content: center;
       align-items: center;
       background-image: linear-gradient(90deg, #000000, #0e1c3feb);
+      overflow: hidden; /* Prevent scrolling */
     }
 
     .container {
@@ -29,13 +30,14 @@
         4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
       box-sizing: border-box;
       width: 95%;
-      height: 100vh; /* Make container taller */
+      max-height: 90vh; /* Prevent excessive height */
       margin: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      overflow: auto; /* Enable scrolling within the container if needed */
     }
 
     h2 {
@@ -82,21 +84,17 @@
       color: orangered;
     }
 
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
     @media (max-width: 768px) {
       .container {
         margin: 15px;
         padding: 25px;
-        height: auto; /* Adjust height for smaller screens */
+        max-height: 80vh; /* Adjust height for smaller screens */
       }
     }
 
     @media (max-width: 480px) {
-      body {
-        height: 130vh;
+      .container {
+        max-height: 70vh; /* Further adjust height for very small screens */
       }
     }
   </style>
