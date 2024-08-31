@@ -14,6 +14,7 @@ A web application for renting products, built using Node.js, Express, EJS, and M
 - Deployment: Nginx, Ubuntu Linux Server
 
 ## Sponsors
+- <a href="https://www.linkedin.com/in/saikat-prasad-naru-517487203/">Saikat Prasad Naru</a>
 - <a href="https://www.linkedin.com/in/swapnil-sarkar-22b1a2290/">Swapnil Sarkar</a>
 - <a href="https://www.linkedin.com/in/debopriyo-dhar-63b0a4281/">Debopriyo Dhar</a>
 - Ratul Mondal
