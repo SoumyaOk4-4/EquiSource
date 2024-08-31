@@ -1,78 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
 
-    <title>Management</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Management</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background-image: linear-gradient(90deg, #000000, #0e1c3feb);
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 40px 40px 40px 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      box-shadow: 0 0 26px rgba(2, 31, 59, 0.7),
+        1px 1.5px 2px -1px rgba(2, 31, 59, 0.65),
+        4px 4px 12px -2.5px rgba(2, 31, 59, 0.65);
+      box-sizing: border-box;
+      width: 95%;
+      margin: 15px;
+      text-align: left;
+      color: #eeeeeee1;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      color: #3F80FF;
+      margin-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #3F80FF;
+      margin-bottom: 10px;
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 5px;
+      border-left: 4px solid #3F80FF;
+      border-right: 4px solid #3F80FF;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    ul li:hover {
+      background-color: rgba(63, 128, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    b {
+      color: #FFD700;
+    }
+
+    a {
+      color: #3F80FF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: orangered;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #eeeeeee1;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 25px;
+        margin: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
     <h1>Rules To Be Followed By Employees</h1>
-    <h2><u>For the '/admin/user-request' route</u></h2>
+    <h2>For the 'http://equisource.duckdns.org:7099/admin/user-requests' route</h2>
     <ul>
-      <li>If the order is pending to hand over then : <b>customer-name</b></li>
-      <li>
-        If the product is on market(using) and used by anyone then :
-        <b>customer-name + _ON</b>
-      </li>
-      <li>If the product is returned then : <b>customer-name + _OK</b> [*]</li>
+      <li>If the order is pending to hand over then: <b>customer-name</b></li>
+      <li>If the product is on market (using) and used by anyone then: <b>customer-name + _ON</b></li>
+      <li>If the product is returned then: <b>customer-name + _OK</b> [*]</li>
     </ul>
-    <h2><u>For Google Sheet (Product Seller)</u></h2>
+
+    <h2>For the 'http://equisource.duckdns.org:7099/admin/upload' route</h2>
+    <ul>
+      <li>Upload the details found in Google Sheet <b>EquiSource Seller Products</b></li>
+      <li><b>productname_sellername</b></li>
+      <li></li>
+    </ul>
+
+    <h2>For Google Sheet (Product Seller)</h2>
     <ul>
       <li>Customer request G-Form <b>Updated in app (yes/no)</b></li>
     </ul>
-    <h2><u>For Google Sheet (Product Request)</u></h2>
+
+    <h2>For Google Sheet (Product Request)</h2>
     <ul>
       <li>Seller request G-Form <b>Updated in app (yes/no)</b></li>
       <li>Seller product count <b>On market / Sold (yes/no)</b></li>
       <li>Returned the product <b>Returned (yes/no)</b> [*]</li>
     </ul>
+
     <h2>Work Space</h2>
     <ul>
-      <li>
-        <a
-          href="https://docs.google.com/spreadsheets/d/17jgVlEcLj8AabjySLJep8qBkMlhY_UAoWOWydrQFO1g/edit?resourcekey=&gid=1317731625#gid=1317731625"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Request A Product in EquiSource</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://docs.google.com/spreadsheets/d/1nNwu0nJZ7biTMVLOEUoWFTAFI6MuUC1Qjw3cuXowGs4/edit?pli=1&gid=186668938#gid=186668938"
-          target="_blank"
-          rel="noopener noreferrer"
-          >EquiSource Seller Products</a
-        >
-      </li>
-      <li>
-        <a
-          href="http://equisource.duckdns.org:7099/admin/user-requests"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Customers</a
-        >
-      </li>
-      <li>
-        <a
-          href="http://equisource.duckdns.org:7099/admin/upload"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Product Upload Page</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://cloud.mongodb.com/v2/66c2ec5999622d3640998117#/metrics/replicaSet/66c2ed360bb9ef17f6dd65d0/explorer/test/items/find"
-          target="_blank"
-          rel="noopener noreferrer"
-          >MongoDB product items table available(true/false)</a
-        >
-      </li>
+      <li><a href="https://docs.google.com/spreadsheets/d/17jgVlEcLj8AabjySLJep8qBkMlhY_UAoWOWydrQFO1g/edit?resourcekey=&gid=1317731625#gid=1317731625" target="_blank" rel="noopener noreferrer">Request A Product in EquiSource</a></li>
+      <li><a href="https://docs.google.com/spreadsheets/d/1nNwu0nJZ7biTMVLOEUoWFTAFI6MuUC1Qjw3cuXowGs4/edit?pli=1&gid=186668938#gid=186668938" target="_blank" rel="noopener noreferrer">EquiSource Seller Products</a></li>
+      <li><a href="http://equisource.duckdns.org:7099/admin/user-requests" target="_blank" rel="noopener noreferrer">Customers</a></li>
+      <li><a href="http://equisource.duckdns.org:7099/admin/upload" target="_blank" rel="noopener noreferrer">Product Upload Page</a></li>
+      <li><a href="https://cloud.mongodb.com/v2/66c2ec5999622d3640998117#/metrics/replicaSet/66c2ed360bb9ef17f6dd65d0/explorer/test/items/find" target="_blank" rel="noopener noreferrer">MongoDB product items table available (true/false)</a></li>
     </ul>
+
     <p>[*] is same but for records it's IMP</p>
-  </body>
+  </div>
+</body>
+
 </html>
